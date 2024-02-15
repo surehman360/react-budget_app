@@ -36,3 +36,94 @@
     transform: rotate(360deg);
   }
 }
+
+.budget-button {
+  font-size: 16px; /* Adjust size as needed */
+  line-height: 30px; /* Makes the text vertically centered */
+  width: 30px; /* Diameter of the button */
+  height: 30px; /* Diameter of the button */
+  border-radius: 50%; /* Makes the button circular */
+  border: 1px solid #ccc; /* Adds a light border */
+  color: white; /* Sets the text color */
+  text-align: center; /* Horizontally centers the text */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+  margin: 0 5px; /* Adds some spacing between buttons */
+  transition: background-color 0.3s; /* Smooth transition for background color */
+  display: inline-flex; /* To center the icon */
+  justify-content: center; /* Center horizontally in flex container */
+  align-items: center; /* Center vertically in flex container */
+  background-color: #4CAF50; /* Green background */
+}
+
+/* Specific styles for the delete icon, which uses the TiDelete component */
+.budget-button.decrease {
+  background-color: #f44336; /* Red background */
+}
+
+/* Adjust icon sizes and button sizes if necessary */
+.budget-button.decrease > svg {
+  fill: white; /* Set the icon color */
+}
+
+.budget-button.increase:hover, .budget-button.decrease:hover {
+  filter: brightness(85%); /* Slightly darken the button color on hover */
+}
+
+/* App.css */
+
+.currency-selector {
+  position: relative;
+  display: inline-block;
+}
+
+.currency-dropdown {
+  background-color: #4CAF50; /* Green background */
+  color: white; /* Text color */
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: left;
+  min-height: 58px;
+}
+
+.currency-dropdown:hover,
+.currency-dropdown:focus {
+  background-color: #70d675;
+}
+
+.currency-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #4CAF50; /* Dropdown background */
+  min-width: 173px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border: #282c34;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.currency-dropdown-content div {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+
+.currency-dropdown-content div:hover {
+  background-color: #f1f1f1;
+}
+
+.currency-selector:hover .currency-dropdown-content {
+  display: block;
+}
+
+/* Optional: Adding a small triangle to the dropdown */
+.currency-dropdown::after {
+  content: '▼';
+  float: right;
+  margin-left: 5px;
+}
